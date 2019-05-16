@@ -25,11 +25,11 @@ public class SpringbootApplication {
 
 
     // 첫번째 빈부터 실행하여 덮어씀
-    @Bean
-    public Holoman holoman() {
-        Holoman holoman = new Holoman();
-        holoman.setName("limgeun");
-        holoman.setHowLong(60);
-        return holoman;
-    }
+//    @Bean
+//    public Holoman holoman() {
+//        Holoman holoman = new Holoman();
+//        holoman.setName("limgeun");
+//        holoman.setHowLong(60);
+//        return holoman;
+//    }
 }
