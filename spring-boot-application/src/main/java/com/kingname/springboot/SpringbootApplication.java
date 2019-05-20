@@ -20,7 +20,7 @@ public class SpringbootApplication {
         SpringApplication application = new SpringApplication(SpringbootApplication.class);
         application.setWebApplicationType(WebApplicationType.NONE);
         application.run(args);
-       // SpringApplication.run(SpringbootApplication.class, args);
+        // SpringApplication.run(SpringbootApplication.class, args);
     }
 
 
