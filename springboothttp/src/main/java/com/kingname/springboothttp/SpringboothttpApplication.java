@@ -1,5 +1,6 @@
 package com.kingname.springboothttp;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,19 @@ public class SpringboothttpApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringboothttpApplication.class, args);
+
+        //SpringApplication.run(SpringboothttpApplication.class, args);
+
+        SpringApplication app = new SpringApplication(SpringboothttpApplication.class);
+        app.setBanner(((environment, sourceClass, out) -> {
+            out.println("===================");
+            out.println("LimGeun");
+            out.println("===================");
+        }));
+
+        //app.setBannerMode(Banner.Mode.OFF);
+
+        app.run(args);
     }
 
 //    @Bean
