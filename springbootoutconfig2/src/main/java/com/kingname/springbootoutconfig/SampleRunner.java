@@ -23,6 +23,7 @@ public class SampleRunner implements ApplicationRunner {
         System.out.println("===============================");
         System.out.println(kingnameProperties.getFullName());
         System.out.println(kingnameProperties.getAge());
+        System.out.println(kingnameProperties.getSessionTimeout());
         System.out.println("===============================");
     }
 }
