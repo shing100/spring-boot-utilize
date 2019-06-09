@@ -1,5 +1,6 @@
 package com.kingname.springbootoutconfig;
 
+import com.kingname.springbootoutconfig.config.BaseConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -9,11 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SampleRunner implements ApplicationRunner {
 
-//    @Value("${kingnmae.fullName}")
-//    private String name;
-//
-//    @Value("${kingname.age")
-//    private int age;
+    @Autowired
+    private String hello;
 
     @Autowired
     KingnameProperties kingnameProperties;
@@ -21,9 +19,9 @@ public class SampleRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("===============================");
-        System.out.println(kingnameProperties.getFullName());
+        System.out.println(hello);
+        System.out.println(kingnameProperties.getName());
         System.out.println(kingnameProperties.getAge());
-        System.out.println(kingnameProperties.getSessionTimeout());
         System.out.println("===============================");
     }
 }
