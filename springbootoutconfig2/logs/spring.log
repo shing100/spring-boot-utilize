@@ -10,3 +10,12 @@
 2019-06-10 21:42:54.219 DEBUG 184612 --- [main] c.k.springbootoutconfig.SampleRunner     : kingname
 2019-06-10 21:42:54.219 DEBUG 184612 --- [main] c.k.springbootoutconfig.SampleRunner     : kingname lim
 2019-06-10 21:42:54.219 DEBUG 184612 --- [main] c.k.springbootoutconfig.SampleRunner     : ===================
+2019-06-10 21:48:04.303  INFO 192536 --- [main] c.k.s.SpringbootoutconfigApplication     : Starting SpringbootoutconfigApplication on DESKTOP-CN9OS9T with PID 192536 (F:\2019_spring\springbootoutconfig2\target\classes started by shing in F:\2019_spring\springbootoutconfig2)
+2019-06-10 21:48:04.305 DEBUG 192536 --- [main] c.k.s.SpringbootoutconfigApplication     : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-06-10 21:48:04.305  INFO 192536 --- [main] c.k.s.SpringbootoutconfigApplication     : The following profiles are active: prod,proddb
+2019-06-10 21:48:04.744  INFO 192536 --- [main] c.k.s.SpringbootoutconfigApplication     : Started SpringbootoutconfigApplication in 0.779 seconds (JVM running for 1.51)
+2019-06-10 21:48:04.746 DEBUG 192536 --- [main] c.k.springbootoutconfig.SampleRunner     : ===================
+2019-06-10 21:48:04.746 DEBUG 192536 --- [main] c.k.springbootoutconfig.SampleRunner     : Hello
+2019-06-10 21:48:04.746 DEBUG 192536 --- [main] c.k.springbootoutconfig.SampleRunner     : kingname
+2019-06-10 21:48:04.746 DEBUG 192536 --- [main] c.k.springbootoutconfig.SampleRunner     : kingname lim
+2019-06-10 21:48:04.746 DEBUG 192536 --- [main] c.k.springbootoutconfig.SampleRunner     : ===================
