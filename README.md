@@ -265,3 +265,69 @@ ApplicationContext를 만들기 전에 사용하는 리스너는 @Bean으로 등
 ### 플레이스 홀더
 - name = geun
 - fullName = ${name} lim
+
+## 외부설정
+
+https://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/html/configuration-metadata.html#configuration-metadata-annotation-processor
+
+타입-세이프 프로퍼티 @ConfigurationProperties
+- 여러 프로퍼티를 묶어서 읽어올 수 있음
+- 빈으로 등록해서 다른 빈에 주입할 수 있음
+- @EnableConfigurationProperties
+- @Component
+- @Bean
+   
+	
+- 융통성 있는 바인딩
+    - context-path (케밥)
+    - context_path (언드스코어)
+    - contextPath (캐멀)
+    - CONTEXTPATH
+
+- 프로퍼티 타입 컨버전
+    - @DurationUnit
+
+- 프로퍼티 값 검증
+    - @Validated
+    - JSR-303 (@NotNull, ...)
+    - 메타 정보 생성
+
+- @Value
+    - SpEL 을 사용할 수 있지만...
+    - 위에 있는 기능들은 전부 사용못함
+\
+## 프로파일
+@Profile 애노테이션은 어디에?
+
+- @Configuration
+- @Component
+	
+### 어떤 프로파일을 활성화 할 것인가?
+- spring.profiles.active
+
+### 어떤 프로파일을 추가할 것인가?
+- spring.profiles.include
+
+### 프로파일용 프로퍼티
+- application-{profile}.properties
+
+## 로깅
+
+### 로깅 퍼사드 VS 로거
+    Commons Logging, SLF4j
+    JUL, Log4J2, Logback
+
+### 스프링 5에 로거 관련 변경 사항
+	https://docs.spring.io/spring/docs/5.0.0.RC3/spring-framework-reference/overview.html#overview-logging
+	Spring-JCL
+	Commons Logging -> SLF4j or Log4j2
+	pom.xml에 exclusion 안해도 됨.
+
+###  스프링 부트 로깅
+	기본 포맷
+	--debug (일부 핵심 라이브러리만 디버깅 모드로)
+	--trace (전부 다 디버깅 모드로)
+	컬러 출력: spring.output.ansi.enabled
+	파일 출력: logging.file 또는 logging.path
+	로그 레벨 조정: logging.level.패지키 = 로그 레벨
+
