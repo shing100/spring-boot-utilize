@@ -1,5 +1,6 @@
 package com.kingname.springtestdemo.sample;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,11 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.rule.OutputCapture;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -21,6 +24,9 @@ public class SampleJsonTest {
 
 //    @Autowired
 //    JacksonTester<SampleController> jacksonTester;
+
+    @Rule
+    public OutputCapture outputCapture = new OutputCapture();
 
     @MockBean
     SampleService mockSampleService;
@@ -34,5 +40,9 @@ public class SampleJsonTest {
 
         mockMvc.perform(get("/hello"))
                 .andExpect(content().string("Hello~kingname"));
+
+        assertThat(outputCapture.toString())
+                .contains("Holoman")
+                .contains("skip");
     }
 }
