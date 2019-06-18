@@ -331,3 +331,61 @@ https://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/html/configurati
 	파일 출력: logging.file 또는 logging.path
 	로그 레벨 조정: logging.level.패지키 = 로그 레벨
 
+## 로깅
+> https://docs.spring.io/spring-boot/docs/current/reference/html/
+
+howto-logging.html 커스텀 로그 설정 파일 사용하기
+-	Logback: logback-spring.xml
+-	Log4J2: log4j2-spring.xml
+-	JUL (비추): logging.properties
+-	Logback extension
+    -	프로파일 <springProfile name=”프로파일”>
+    -	Environment 프로퍼티 <springProperty>
+### 로거를 Log4j2로 변경하기
+>	https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html#howto-configure-log4j-for-logging
+
+## 테스트
+
+시작은 일단 spring-boot-starter-test를 추가하는 것 부터
+- test 스콥으로 추가.
+
+### @SpringBootTest
+- @RunWith(SpringRunner.class)랑 같이 써야 함.
+- 빈 설정 파일은 설정을 안해주나? 알아서 찾습니다. (@SpringBootApplication)
+- webEnvironment
+    - MOCK: mock servlet environment. 내장 톰캣 구동 안 함.
+    - RANDON_PORT, DEFINED_PORT: 내장 톰캣 사용 함.
+    - NONE: 서블릿 환경 제공 안 함.
+ 
+### @MockBean
+- ApplicationContext에 들어있는 빈을 Mock으로 만든 객체로 교체 함.
+- 모든 @Test 마다 자동으로 리셋.
+
+
+### 슬라이스 테스트
+- 레이어 별로 잘라서 테스트하고 싶을 때
+- @JsonTest
+- @WebMvcTest
+- @WebFluxTest
+- @DataJpaTest
+
+## MVC
+
+> https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#spring-web
+ 
+ HTTP 요청 본문을 객체로 변경하거나, 객체를 HTTP 응답 본문으로 변경할 때 사용 {“username”:”keesun”, “password”:”123”} <-> User
+- @ReuqestBody
+- @ResponseBody
+
+## 스프링 부트
+- 뷰 리졸버 설정 제공
+- HttpMessageConvertersAutoConfiguration
+
+### XML 메시지 컨버터 추가하기
+```xml
+<dependency>
+   <groupId>com.fasterxml.jackson.dataformat</groupId>
+   <artifactId>jackson-dataformat-xml</artifactId>
+   <version>2.9.6</version>
+</dependency>
+```

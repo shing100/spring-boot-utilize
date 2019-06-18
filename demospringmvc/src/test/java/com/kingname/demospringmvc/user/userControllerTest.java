@@ -38,4 +38,15 @@ public class userControllerTest {
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.username", is(equalTo("kingname"))));
     }
+
+    @Test
+    public void createUser_XML() throws Exception {
+        String userJson = "{\"username\":\"kingname\"}";
+        mockMvc.perform(post("/users/create")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .accept(MediaType.APPLICATION_XML)
+                .content(userJson))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/User/username").string("kingname"));
+    }
 }
