@@ -443,3 +443,22 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 - 의존성 추가: spring-boot-starter-thymeleaf
 - 템플릿 파일 위치: /src/main/resources/template/
 - 예제: https://github.com/thymeleaf/thymeleafexamples-stsm/blob/3.0-master/src/main/webapp/WEB-INF/templates/seedstartermng.html
+
+## HTML 템플릿 뷰 테스트
+> http://htmlunit.sourceforge.net/
+>http://htmlunit.sourceforge.net/gettingStarted.html
+
+## 의존성 추가
+```xml
+<dependency>
+   <groupId>org.seleniumhq.selenium</groupId>
+   <artifactId>htmlunit-driver</artifactId>
+   <scope>test</scope>
+</dependency>
+<dependency>
+   <groupId>net.sourceforge.htmlunit</groupId>
+   <artifactId>htmlunit</artifactId>
+   <scope>test</scope>
+</dependency>
+```
+@Autowire WebClient
