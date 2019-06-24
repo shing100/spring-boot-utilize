@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 @Component
-public class H2Runner implements ApplicationRunner {
+public class MySQLRunner implements ApplicationRunner {
 
     @Autowired
     DataSource dataSource;
@@ -23,6 +23,7 @@ public class H2Runner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         try(Connection connection = dataSource.getConnection()) {
             connection.setAutoCommit(false);
+            System.out.println(dataSource.getClass());
             System.out.println(connection.getMetaData().getURL());
             System.out.println(connection.getMetaData().getUserName());
             connection.getMetaData().getURL();
