@@ -27,7 +27,6 @@ public class AccountRepositoryTest {
     AccountRepository accountRepository;
 
     @Test
-
     public void di() throws Exception {
 //        try(Connection connection = dataSource.getConnection()) {
 //            DatabaseMetaData metaData = connection.getMetaData();
@@ -39,6 +38,7 @@ public class AccountRepositoryTest {
         Account account = new Account();
         account.setUsername("kingname");
         account.setPassword("pass");
+        account.setEmail("K@na.com");
 
         Account newAccount = accountRepository.save(account);
 
