@@ -18,6 +18,8 @@ public class Account {
 
     private String password;
 
+    private boolean isActive;
+
     private String email;
 
 }
