@@ -695,3 +695,48 @@ mongo
 ### 내장형 MongoDB (테스트용)
 - de.flapdoodle.embed:de.flapdoodle.embed.mongo
 - @DataMongoTest
+
+
+## Neo4j
+Neo4j는 노드간의 연관 관계를 영속화하는데 유리한 그래프 데이터베이스 입니다.
+
+### 의존성 추가
+- spring-boot-starter-data-neo4j
+
+### Neo4j 설치 및 실행 (도커)
+- docker run -p 7474:7474 -p 7687:7687 -d --name noe4j_boot neo4j
+- http://localhost:7474/browser
+
+### 스프링 데이터 Neo4J
+- Neo4jTemplate (Deprecated)
+- SessionFactory
+- Neo4jRepository
+
+## 스프링 데이터 정리
+> https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-sql
+
+
+## 스프링 시큐리티
+- 웹 시큐리티
+- 메소드 시큐리티
+- 다양한 인증 방법 지원
+    - LDAP, 폼 인증, Basic 인증, OAuth, ...
+
+### 스프링 부트 시큐리티 자동 설정
+- SecurityAutoConfiguration
+- UserDetailsServiceAutoConfiguration
+- spring-boot-starter-security
+    - 스프링 시큐리티 5.* 의존성 추가
+- 모든 요청에 인증이 필요함.
+- 기본 사용자 생성
+    - Username: user
+    - Password: 애플리케이션을 실행할 때 마다 랜덤 값 생성 (콘솔에 출력 됨.)
+    - spring.security.user.name
+    - spring.security.user.password
+- 인증 관련 각종 이벤트 발생
+    - DefaultAuthenticationEventPublisher 빈 등록
+    - 다양한 인증 에러 핸들러 등록 가능
+
+
+### 스프링 부트 시큐리티 테스트
+> https://docs.spring.io/spring-security/site/docs/current/reference/html/test-method.html
