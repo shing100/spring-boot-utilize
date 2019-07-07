@@ -740,3 +740,26 @@ Neo4j는 노드간의 연관 관계를 영속화하는데 유리한 그래프 �
 
 ### 스프링 부트 시큐리티 테스트
 > https://docs.spring.io/spring-security/site/docs/current/reference/html/test-method.html
+
+
+### 웹 시큐리티 설정
+```java
+@Configuration
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+   @Override
+   protected void configure(HttpSecurity http) throws Exception {
+       http.authorizeRequests()
+               .antMatchers("/", "/hello").permitAll()
+               .anyRequest().authenticated()
+               .and()
+           .formLogin()
+               .and()
+           .httpBasic();
+   }
+}
+```
+### UserDetailsServie 구현
+> https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#jc-authentication-userdetailsservice
+
+### PasswordEncoder 설정 및 사용
+> https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#core-services-password-encoding
