@@ -1,17 +1,22 @@
 package com.kingname.springbootjpa.account;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.kingname.springbootjpa.team.Team;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Account {
 
     @Id
     @GeneratedValue
+    @Column(name = "ACCOUNT_ID")
     private Long id;
 
     private String username;
@@ -21,5 +26,10 @@ public class Account {
     private boolean isActive;
 
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    @JsonBackReference
+    private Team team;
 
 }
