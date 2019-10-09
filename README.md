@@ -544,7 +544,7 @@ INSERT INTO USER VALUES (1, ‘keesun’)
 
 ### MySQL 추가 (도커 사용)
 ```
-docker run -p 3306:3306 --name mysql_boot -e MYSQL_ROOT_PASSWORD=1 -e MYSQL_DATABASE=springboot -e MYSQL_USER=keesun -e MYSQL_PASSWORD=pass -d mysql
+docker run -p 3306:3306 --name mysql_boot -e MYSQL_ROOT_PASSWORD=1 -e MYSQL_DATABASE=springboot -e MYSQL_USER=limgeun -e MYSQL_PASSWORD=pass -d mysql
 
 docker exec -i -t mysql_boot bash
 mysql -u root -p
@@ -552,7 +552,7 @@ mysql -u root -p
 
 ### MySQL용 Datasource 설정
 - spring.datasource.url=jdbc:mysql://localhost:3306/springboot?useSSL=false
-- spring.datasource.username=keesun
+- spring.datasource.username=limgeun
 - spring.datasource.password=pass
 
 ### MySQL 접속시 에러
@@ -579,7 +579,7 @@ Sat Jul 21 11:17:59 PDT 2018 WARN: Establishing SSL connection without server's 
 
 ### PostgreSQL 설치 및 서버 실행 (docker)
 ```
-docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=keesun -e POSTGRES_DB=springboot --name postgres_boot -d postgres
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=limgeun -e POSTGRES_DB=springboot --name postgres_boot -d postgres
 
 docker exec -i -t postgres_boot bash
 
